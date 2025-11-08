@@ -1,189 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - TechHub</title>
-    <script>
-      // Set title immediately to prevent blinking
-      (function() {
-        document.title = "About Us - TechHub";
-        var checkTitle = function() {
-          if (document.title !== "About Us - TechHub") {
-            document.title = "About Us - TechHub";
-          }
-        };
-        // Check immediately and on various events
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', checkTitle);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - TechHub</title>
+  <script>
+    // Set title immediately to prevent blinking
+    (function () {
+      document.title = "About Us - TechHub";
+      var checkTitle = function () {
+        if (document.title !== "About Us - TechHub") {
+          document.title = "About Us - TechHub";
         }
-        window.addEventListener('load', checkTitle);
-        window.addEventListener('pageshow', checkTitle);
-        // Quick periodic check during initial load
-        var interval = setInterval(function() {
-          checkTitle();
-          if (document.readyState === 'complete') {
-            setTimeout(function() { clearInterval(interval); }, 500);
-          }
-        }, 50);
-      })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body data-theme="light">
-    <!-- Header -->
-    <header>
-      <nav class="main-nav">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="inline-block w-7 h-7 -mt-1"
-          >
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          TechHub
-        </a>
+      };
+      // Check immediately and on various events
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkTitle);
+      }
+      window.addEventListener('load', checkTitle);
+      window.addEventListener('pageshow', checkTitle);
+      // Quick periodic check during initial load
+      var interval = setInterval(function () {
+        checkTitle();
+        if (document.readyState === 'complete') {
+          setTimeout(function () { clearInterval(interval); }, 500);
+        }
+      }, 50);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-        <!-- Desktop Navigation Links -->
-        <div class="nav-links-desktop">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="products.html" class="nav-link">Products</a>
-          <a href="about.html" class="nav-link active">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-          <a href="cart.html" class="nav-link-cart">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-5 h-5 mr-1"
-            >
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path
-                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-              ></path>
-            </svg>
-            Cart
-            <span id="cart-badge" class="cart-badge">0</span>
-          </a>
-        </div>
+<body data-theme="light">
+  <!-- Header -->
+  <header>
+    <nav class="main-nav">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="inline-block w-7 h-7 -mt-1">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        TechHub
+      </a>
 
-        <!-- Login/Profile Icon and Mobile Menu Button -->
-        <div class="nav-icons">
-          <button id="login-btn" class="login-btn">Login</button>
-          <div id="profile-icon" class="profile-icon hidden">
-            <img
-              src="https://placehold.co/40x40/e0e7ff/6366f1?text=User"
-              alt="User Profile"
-            />
-          </div>
-
-          <!-- Mobile Menu Button -->
-          <button id="mobile-menu-btn" class="mobile-menu-btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-6 h-6"
-            >
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
-          <button id="theme-toggle-btn" class="theme-toggle-btn"></button>
-        </div>
-      </nav>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="mobile-menu hidden">
-        <a href="index.html" class="nav-link-mobile">Home</a>
-        <a href="products.html" class="nav-link-mobile">Products</a>
-        <a href="about.html" class="nav-link-mobile active">About</a>
-        <a href="contact.html" class="nav-link-mobile">Contact</a>
-        <a href="cart.html" class="nav-link-mobile cart-mobile">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-5 h-5 mr-1"
-          >
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links-desktop">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="cart.html" class="nav-link-cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-1">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
-            <path
-              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-            ></path>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
           Cart
+          <span id="cart-badge" class="cart-badge">0</span>
         </a>
       </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="main-content page-fade-in">
-      <!-- Page: About -->
-      <section id="about" class="page">
-        <h1 class="page-title">About Us</h1>
-        <div class="about-content glass-card">
-          <p>
-            Welcome to TechHub! We are your premier destination for cutting-edge electronics and premium gadgets that enhance your digital lifestyle.
-          </p>
-          <p>
-            Founded with a passion for technology, we curate the finest selection of wireless audio, smart wearables, and innovative accessories. Our commitment to quality ensures every product meets the highest standards.
-          </p>
-          <p>
-            From wireless headphones to smart watches, we bring you the latest innovations that seamlessly integrate into your modern life. Experience the future of technology with TechHub.
-          </p>
+      <!-- Login/Profile Icon and Mobile Menu Button -->
+      <div class="nav-icons">
+        <button id="login-btn" class="login-btn">Login</button>
+        <div id="profile-icon" class="profile-icon hidden">
+          <img src="https://placehold.co/40x40/e0e7ff/6366f1?text=User" alt="User Profile" />
         </div>
-      </section>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container text-center">
-        <p>&copy; 2024 TechHub. Premium electronics for modern life.</p>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <button id="theme-toggle-btn" class="theme-toggle-btn"></button>
       </div>
-    </footer>
+    </nav>
 
-    <!-- Toast Notification -->
-    <div id="toast">Item added to cart!</div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <a href="index.html" class="nav-link-mobile">Home</a>
+      <a href="products.html" class="nav-link-mobile">Products</a>
+      <a href="about.html" class="nav-link-mobile active">About</a>
+      <a href="contact.html" class="nav-link-mobile">Contact</a>
+      <a href="cart.html" class="nav-link-mobile cart-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-1">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        Cart
+      </a>
+    </div>
+  </header>
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
-  </body>
+  <!-- Main Content -->
+  <main class="main-content page-fade-in">
+    <!-- Page: About -->
+    <section id="about" class="page">
+      <h1 class="page-title">About Us</h1>
+      <div class="about-content glass-card">
+        <p>
+          Welcome to TechHub! We are your premier destination for cutting-edge electronics and premium gadgets that
+          enhance your digital lifestyle.
+        </p>
+        <p>
+          Founded with a passion for technology, we curate the finest selection of wireless audio, smart wearables, and
+          innovative accessories. Our commitment to quality ensures every product meets the highest standards.
+        </p>
+        <p>
+          From wireless headphones to smart watches, we bring you the latest innovations that seamlessly integrate into
+          your modern life. Experience the future of technology with TechHub.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2025 TechHub. Premium electronics for modern life.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast">Item added to cart!</div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+
 </html>
