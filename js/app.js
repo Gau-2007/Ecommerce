@@ -1,31 +1,32 @@
 // Set title based on page
-(function() {
+(function () {
   var pageTitles = {
-    'index.html': 'TechHub - Premium Electronics Store',
-    'products.html': 'Products - TechHub',
-    'about.html': 'About Us - TechHub', 
-    'contact.html': 'Contact - TechHub',
-    'cart.html': 'Shopping Cart - TechHub',
-    'login.html': 'Login - TechHub',
-    'signup.html': 'Sign Up - TechHub'
+    "index.html": "TechHub - Premium Electronics Store",
+    "products.html": "Products - TechHub",
+    "about.html": "About Us - TechHub",
+    "contact.html": "Contact - TechHub",
+    "cart.html": "Shopping Cart - TechHub",
+    "login.html": "Login - TechHub",
+    "signup.html": "Sign Up - TechHub",
   };
-  
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  var targetTitle = pageTitles[currentPage] || 'TechHub - Premium Electronics Store';
-  
-  var setTitle = function() {
+
+  var currentPage = window.location.pathname.split("/").pop() || "index.html";
+  var targetTitle =
+    pageTitles[currentPage] || "TechHub - Premium Electronics Store";
+
+  var setTitle = function () {
     if (document.title !== targetTitle) {
       document.title = targetTitle;
     }
   };
-  
+
   setTitle();
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setTitle);
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setTitle);
   }
-  window.addEventListener('load', setTitle);
-  window.addEventListener('pageshow', setTitle);
+  window.addEventListener("load", setTitle);
+  window.addEventListener("pageshow", setTitle);
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,84 +59,83 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 4,
       name: "Noise-Cancelling Earbuds",
       price: 9999,
-      image: "https://placehold.co/600x400/38b2ac/ffffff?text=Earbuds",
+      image: "images/Noise_Cancelling_Earbuds.jpeg",
       category: "Audio",
     },
     {
       id: 5,
       name: "Fitness Tracker",
       price: 7999,
-      image: "https://placehold.co/600x400/dd6b20/ffffff?text=Tracker",
+      image: "images/Fitness_Tracker.jpeg",
       category: "Wearable",
     },
     {
       id: 6,
       name: "Portable Power Bank",
       price: 2499,
-      image: "https://placehold.co/600x400/c53030/ffffff?text=Power+Bank",
+      image: "images/Portable_Power_Bank.jpeg",
       category: "Accessories",
     },
     {
       id: 7,
       name: "Smart Home Hub",
       price: 14999,
-      image: "https://placehold.co/600x400/5a67d8/ffffff?text=Smart+Hub",
+      image: "images/Smart_Home_Hub.jpeg",
       category: "Accessories",
     },
     {
       id: 8,
       name: "Gaming Headset",
       price: 11999,
-      image: "https://placehold.co/600x400/d53f8c/ffffff?text=Gaming+Headset",
+      image: "images/Gaming_Headset.jpeg",
       category: "Audio",
     },
     {
       id: 9,
       name: "4K Action Camera",
       price: 24999,
-      image: "https://placehold.co/600x400/38a169/ffffff?text=Action+Camera",
+      image: "images/4K _Action_Camera.jpeg",
       category: "Cameras",
     },
     {
       id: 10,
       name: "E-Reader",
       price: 8999,
-      image: "https://placehold.co/600x400/ed8936/ffffff?text=E-Reader",
+      image: "images/E-Reader.jpeg",
       category: "Gadgets",
     },
     {
       id: 11,
       name: "VR Headset",
       price: 29999,
-      image: "https://placehold.co/600x400/805ad5/ffffff?text=VR+Headset",
+      image: "images/VR_Headset.jpeg",
     },
     {
       id: 12,
       name: "Wireless Charger",
       price: 3999,
-      image: "https://placehold.co/600x400/e53e3e/ffffff?text=Wireless+Charger",
+      image: "images/Wireless_Charger.jpeg",
       category: "Accessories",
     },
     {
       id: 13,
       name: "Smartphone Gimbal",
       price: 10999,
-      image:
-        "https://placehold.co/600x400/38b2ac/ffffff?text=Smartphone+Gimbal",
+      image: "images/Smartphone_Gimbal.jpeg",
       category: "Cameras",
     },
     {
       id: 14,
       name: "Digital Photo Frame",
       price: 6999,
-      image: "https://placehold.co/600x400/dd6b20/ffffff?text=Photo+Frame",
+      image: "images/Digital_Photo_Frame.jpeg",
       category: "Gadgets",
     },
     {
       id: 15,
       name: "Smart Light Bulb",
       price: 1999,
-      image: "https://placehold.co/600x400/c53030/ffffff?text=Smart+Bulb",
+      image: "images/Smart_Light_Bulb.jpeg",
       category: "Accessories",
     },
   ];
@@ -360,15 +360,14 @@ document.addEventListener("DOMContentLoaded", () => {
       productCard.className = "product-card glass-card"; // Apply glass-card
       productCard.innerHTML = `
             <div class="product-image-container">
-                <img src="${product.image}" alt="${
-        product.name
-      }" class="product-image">
+                <img src="${product.image}" alt="${product.name
+        }" class="product-image">
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-price">₹${product.price.toLocaleString(
-                  "en-IN"
-                )}</p>
+          "en-IN"
+        )}</p>
                 <button 
                     class="add-to-cart-btn"
                     data-id="${product.id}"
@@ -403,18 +402,16 @@ document.addEventListener("DOMContentLoaded", () => {
       card.className = "product-card glass-card";
       card.innerHTML = `
             <div class="product-image-container">
-                <img src="${product.image}" alt="${
-        product.name
-      }" class="product-image">
+                <img src="${product.image}" alt="${product.name
+        }" class="product-image">
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-price">₹${product.price.toLocaleString(
-                  "en-IN"
-                )}</p>
-                <button class="add-to-cart-btn" data-id="${
-                  product.id
-                }">Add to Cart</button>
+          "en-IN"
+        )}</p>
+                <button class="add-to-cart-btn" data-id="${product.id
+        }">Add to Cart</button>
             </div>
         `;
       featuredGrid.appendChild(card);
@@ -454,23 +451,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const cartItemEl = document.createElement("div");
       cartItemEl.className = "cart-item glass-card";
       cartItemEl.innerHTML = `
-            <img src="${product.image}" alt="${
-        product.name
-      }" class="cart-item-image">
+            <img src="${product.image}" alt="${product.name
+        }" class="cart-item-image">
             <div class="cart-item-details">
                 <h4 class="cart-item-name">${product.name}</h4>
                 <p class="cart-item-price">₹${product.price.toLocaleString(
-                  "en-IN"
-                )}</p>
+          "en-IN"
+        )}</p>
             </div>
             <div class="cart-item-quantity-control">
-                <button class="cart-quantity-btn" data-id="${
-                  product.id
-                }" data-action="decrease">-</button>
+                <button class="cart-quantity-btn" data-id="${product.id
+        }" data-action="decrease">-</button>
                 <span class="cart-quantity">${cartItem.quantity}</span>
-                <button class="cart-quantity-btn" data-id="${
-                  product.id
-                }" data-action="increase">+</button>
+                <button class="cart-quantity-btn" data-id="${product.id
+        }" data-action="increase">+</button>
             </div>
             <p class="cart-item-total">₹${itemTotal.toLocaleString("en-IN")}</p>
             <button class="cart-remove-btn" data-id="${product.id}">
